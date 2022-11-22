@@ -1,0 +1,4 @@
+%dw 2.0
+
+type auto_06fb57bc_612d_4598_975e_89129f8e37ac_Output_Payload = Array<{  CreationDate: String,   Type: String,   Address: String,   AirMiles: Number,   ID?: Number,   Name: String,   _?: Any}>
+

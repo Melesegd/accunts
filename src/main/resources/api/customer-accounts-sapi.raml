@@ -1,0 +1,36 @@
+#%RAML 1.0
+title: customer-accounts-sapi
+
+types:
+  Accounts: !include accountDataType/account-data-type.raml
+
+/accounts:
+  get:
+    headers:
+      requestor-id:
+        description: The person or the system requesting tha data
+        displayName: Requestor ID
+    queryParameters:
+      account-type:
+        enum: [personal, business]
+      name:
+    responses:
+      200:
+        body:
+          application/json:
+            type: Accounts[]
+            example: !include Example-accounts/example-accounts.json
+  post:
+    body:
+      application/json:
+        type: Accounts
+        example: !include Example-accounts/post-example-account.json
+    responses:
+      201:
+        body:
+          application/json:
+            example: {"message": "Accounts created"}
+              
+          
+              
+
